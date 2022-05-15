@@ -1,0 +1,243 @@
+/* body */
+body{
+    background-image: url('images/background-index.gif');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    width: 100%; 
+    padding: 0 0 0 0;
+    margin: auto
+;
+}
+#evolution{
+    background-image: url('images/pattern_1.png');
+    height: 100%;
+    background-color:#ffd499;
+}
+
+#refleksion{
+    background-image: url('images/pattern_8.png');
+    height: 100%;
+    background-color:#ffd499;
+}
+
+#logbog{
+    background-image: url('images/pattern_6.png');
+    height: 100%;
+    background-color:#58f4ff;
+}
+
+ 
+
+/* scroll wheel */
+body::-webkit-scrollbar {
+    width: 18px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: black;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 5px solid #ffd499;  /* creates padding around scroll thumb */
+  }
+
+/* header */
+#header{
+        content:"";
+        display:table;
+        clear:both;
+        position:relative;
+        animation:animatetop 1.3s;
+        width:auto;
+        text-align:center;
+        margin: auto;
+        line-height: 0;
+        margin-top: 3%;
+    }
+        @keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+
+/* headline animation dealay */
+#headline{
+    text-transform: uppercase;
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    content:"";
+    display:table;
+    clear:both;
+    position:relative;
+    animation:animatetop 1.3s;
+    display:inline-block;
+    width:auto;
+    color: rgb(54, 54, 54);
+    -webkit-text-stroke: 4px rgb(54, 54, 54);
+}
+
+/* byline */
+#byline{
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-style: italic;
+    text-shadow: -0.033em 0 1px rgba(255,0,0,0.67), 0.033em 0 1px rgba(0, 255, 255, 0.67);
+} 
+
+/* main image */
+#mainimg{
+    display: block;
+    margin: auto;
+    width: 85%;
+}
+
+/* 4x4 table */
+#t4x4{
+    width: 85%;
+    display: block;
+    margin: auto;
+    padding-bottom: 30px     ;
+}
+
+td, th {
+
+    padding: auto;
+    width: 9999px;
+    position: relative;
+  }
+
+/* index buttons */
+  .indexbutton{
+    display: block;
+    margin: auto;
+    width: 350px;
+    background-size:cover;
+    border-radius: 10%;
+    border-color:rgb(176, 163, 163);
+    border-width: 0;
+ 
+}
+
+.indexbutton:hover{
+    border-width: 10px;
+    width: 350px;
+    height: 265px;
+    transition: 1s;  
+}
+
+/* text for buttons */
+.buttontext{
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 120%;
+    background-color: #756d6d;
+    width: 50%;
+    margin:auto;
+    margin-top: 70%;
+}
+.indexbutton:hover p{
+    transition: 1s;
+    margin-top: 69.5%;
+}
+
+
+/* images for buttons */
+#teoributton{
+    background-image: url('images/f.png');
+    margin-left: 0%;
+}
+#teoributton:hover{
+    background-image: url('images/fe.gif');
+}
+
+#refleksionbutton{
+    background-image: url('images/f.png');
+    margin-right: 0%;
+}
+#refleksionbutton:hover{
+    background-image: url('images/fe.gif');
+}
+
+#logbogbutton{
+    background-image: url('images/f.png');
+    margin-left: 0%;
+}
+#logbogbutton:hover{
+    background-image: url('images/fe.gif');
+}
+
+#monkeygamebutton{
+    background-image: url('images/f.png');
+    margin-right: 0%;
+}
+#monkeygamebutton:hover{
+    background-image: url('images/fe.gif');
+}
+
+/* bodytext */
+.textpage{
+    background-color: white;
+    display: block;
+    margin:auto;
+    margin-top: 10%;
+    height: 100%;
+    width: 60%;
+    margin-bottom: 3%;
+    overflow: hidden;
+
+}
+
+#lessermargin{
+     margin-top: 5%;
+     width: 60%;
+     margin-bottom: 30px;
+
+}
+
+.mainheadline{
+    margin-left: 5%;
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.bodytext{
+    margin:auto;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+/* Navigation bar */
+.navmenu{
+    display:block;
+    background:white;
+    width:6%;
+    height:fit-content;
+    position:fixed;
+    top: 25%;
+    left: 14.35%;
+
+}
+
+.navmenu tr{
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    height: 30px;
+    padding: 10px 0px 0px 0px;
+    width: 100%;
+    text-align: left;
+}
+
+.navmenu a{
+    font-family:"Source Sans Pro", helvetica, sans-serif;
+    font-style: normal;
+    color:black;
+    text-decoration: none;
+}
+
+.navmenu tr:hover{
+    border:4px solid;
+    border-color: rgb(0, 0, 0);
+}

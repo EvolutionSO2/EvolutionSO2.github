@@ -1,0 +1,252 @@
+<html>
+  <script type="text/javascript">
+  var canvas, ctx, flag = false,
+      prevX = 0,
+      currX = 0,
+      prevY = 0,
+      currY = 0,
+      dot_flag = false;
+
+      
+
+  var x = "black",
+      y = 2;
+  
+  function init() {
+      canvas = document.getElementById('can');
+      canvas2 = document.getElementById('can');
+      canvas3 = document.getElementById('can');
+      canvas4 = document.getElementById('can');
+      canvas5 = document.getElementById('can');
+      canvas6 = document.getElementById('can');
+      ctx = canvas.getContext("2d");
+      w = canvas.width;
+      h = canvas.height;
+
+      ctx2 = canvas2.getContext("2d");
+      w = canvas2.width;
+      h = canvas2.height;
+
+      ctx3 = canvas3.getContext("2d");
+      w = canvas3.width;
+      h = canvas3.height;
+
+      ctx4 = canvas4.getContext("2d");
+      w = canvas4.width;
+      h = canvas4.height;
+
+      ctx5 = canvas5.getContext("2d");
+      w = canvas5.width;
+      h = canvas5.height;
+
+      ctx6 = canvas6.getContext("2d");
+      w = canvas6.width;
+      h = canvas6.height;
+  
+      canvas.addEventListener("mousemove", function (e) {
+          findxy('move', e)
+      }, false);
+      canvas.addEventListener("mousedown", function (e) {
+          findxy('down', e)
+      }, false);
+      canvas.addEventListener("mouseup", function (e) {
+          findxy('up', e)
+      }, false);
+      canvas.addEventListener("mouseout", function (e) {
+          findxy('out', e)
+      }, false);
+  }
+  
+  function color(obj) {
+      switch (obj.id) {
+          case "green":
+              x = "green";
+              break;
+          case "blue":
+              x = "blue";
+              break;
+          case "red":
+              x = "red";
+              break;
+          case "yellow":
+              x = "yellow";
+              break;
+          case "orange":
+              x = "orange";
+              break;
+          case "black":
+              x = "black";
+              break;
+          case "white":
+              x = "white";
+              break;
+      }
+      if (x == "white") y = 14;
+      else y = 2;
+  
+  }
+  
+  function draw() {
+      ctx.beginPath();
+      ctx.moveTo(prevX, prevY);
+      ctx.lineTo(currX, currY);
+      ctx.strokeStyle = x;
+      ctx.lineWidth = y;
+      ctx.stroke();
+      ctx.closePath();
+  }
+  
+  function erase() {
+      var m = confirm("Want to clear");
+      if (m) {
+          ctx.clearRect(0, 0, w, h);
+
+      }
+  }
+  
+  function save() {
+      document.getElementById("canvasimg").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg").src = dataURL;
+      document.getElementById("btn2").style.display = "inline";
+      document.getElementById("btn").style.display = "none";
+      document.getElementById("text").innerText = "Tegning 2/6"
+      ctx.clearRect(0, 0, w, h);
+  }
+  
+  function save2() {
+      document.getElementById("canvasimg2").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg2").src = dataURL;
+      document.getElementById("btn3").style.display = "inline";
+      document.getElementById("btn2").style.display = "none";
+      document.getElementById("text").innerText = "Tegning 3/6"
+      ctx.clearRect(0, 0, w, h);
+  }
+  
+  
+  function save3() {
+      document.getElementById("canvasimg3").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg3").src = dataURL;
+      document.getElementById("btn4").style.display = "inline";
+      document.getElementById("btn3").style.display = "none";
+      document.getElementById("text").innerText = "Tegning 4/6"
+      ctx.clearRect(0, 0, w, h);
+  }
+
+  function save4() {
+      document.getElementById("canvasimg4").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg4").src = dataURL;
+      document.getElementById("btn5").style.display = "inline";
+      document.getElementById("btn4").style.display = "none";
+      document.getElementById("text").innerText = "Tegning 5/6"
+      ctx.clearRect(0, 0, w, h);
+  }
+
+  function save5() {
+      document.getElementById("canvasimg5").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg5").src = dataURL;
+
+      document.getElementById("btn6").style.display = "inline";
+      document.getElementById("btn5").style.display = "none";
+      document.getElementById("text").innerText = "Tegning 6/6"
+      ctx.clearRect(0, 0, w, h);
+  }
+  
+  function save6() {
+      document.getElementById("canvasimg6").style.border = "2px solid";
+      var dataURL = canvas.toDataURL();
+      document.getElementById("canvasimg6").src = dataURL;
+      document.getElementById("canvasimg").style.display = "inline";
+      document.getElementById("canvasimg2").style.display = "inline";
+      document.getElementById("canvasimg3").style.display = "inline";
+      document.getElementById("canvasimg4").style.display = "inline";
+      document.getElementById("canvasimg5").style.display = "inline";
+      document.getElementById("canvasimg6").style.display = "inline";
+      document.getElementById("after").style.display = "inline";
+      document.getElementById("drawingcan").style.display = "none";
+      ctx.clearRect(0, 0, w, h);
+  }
+
+  function findxy(res, e) {
+      if (res == 'down') {
+          prevX = currX;
+          prevY = currY;
+          currX = e.clientX - canvas.offsetLeft;
+          currY = e.clientY - canvas.offsetTop;
+          
+  
+          flag = true;
+          dot_flag = true;
+          if (dot_flag) {
+              ctx.beginPath();
+              ctx.fillStyle = x;
+              ctx.fillRect(currX, currY, 2, 2);
+              ctx.closePath();
+              dot_flag = false;
+          }
+      }
+      if (res == 'up' || res == "out") {
+          flag = false;
+      }
+      if (res == 'move') {
+          if (flag) {
+              prevX = currX;
+              prevY = currY;
+              currX = e.clientX - canvas.offsetLeft;
+              currY = e.clientY - canvas.offsetTop;
+              
+              draw();
+          }
+      }
+  } 
+  </script>
+
+
+  <body style="overflow:hidden;" onload="init()">
+    <div id="drawingcan" style="display: inline;">
+    <p id="text" style="margin: auto; font-size: 30px; text-align: center;">Tegning 1/6</p>
+      <canvas id="can" width="400" height="600" style="position:absolute;top:10%;left:30%;border:2px solid;"></canvas>
+
+      <div style="position:absolute;top:12%;left:63%;">Vælg farve</div>
+      <div style="position:absolute;top:15%;left:65%;width:30px;height:30px;background:green;" id="green" onclick="color(this)"></div>
+      <div style="position:absolute;top:15%;left:68%;width:30px;height:30px;background:blue;" id="blue" onclick="color(this)"></div>
+      <div style="position:absolute;top:15%;left:71%;width:30px;height:30px;background:red;" id="red" onclick="color(this)"></div>
+      <div style="position:absolute;top:23%;left:65%;width:30px;height:30px;background:yellow;" id="yellow" onclick="color(this)"></div>
+      <div style="position:absolute;top:23%;left:68%;width:30px;height:30px;background:orange;" id="orange" onclick="color(this)"></div>
+      <div style="position:absolute;top:23%;left:71%;width:30px;height:30px;background:black;" id="black" onclick="color(this)"></div>
+      <div style="position:absolute;top:29%;left:63%;">Viskelæder</div>
+      <div style="position:absolute;top:32%;left:65%;width:30px;height:30px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+     
+      <input type="button" value="næste tegning" id="btn" size="30" onclick="save()" style="position:absolute;top:92%;left:30%;">
+      <input type="button" value="næste tegning" id="btn2" size="30" onclick="save2()" style="position:absolute;top:92%;left:30%;display: none;">
+      <input type="button" value="næste tegning" id="btn3" size="30" onclick="save3()" style="position:absolute;top:92%;left:30%;display: none;">
+      <input type="button" value="næste tegning" id="btn4" size="30" onclick="save4()" style="position:absolute;top:92%;left:30%;display: none;">
+      <input type="button" value="næste tegning" id="btn5" size="30" onclick="save5()" style="position:absolute;top:92%;left:30%;display: none;">
+      <input type="button" value="næste tegning" id="btn6" size="30" onclick="save6()" style="position:absolute;top:92%;left:30%;display: none;">
+      <input type="button" value="slet" id="clr" size="23" onclick="erase()" style="position:absolute;top:92%;left:37%;">
+  </div>
+  <div id="after" style="display:  none;">
+<img id="canvasimg" style="position:absolute;top:8%;left:20%; height: 30%; display: none;">
+<img id="canvasimg2" style="position:absolute;top:8%;left:30%; height: 30%;display: none;">
+<img id="canvasimg3" style="position:absolute;top:8%;left:40%; height: 30%;display: none;">
+<img id="canvasimg4" style="position:absolute;top:8%;left:50%; height: 30%;display: none;">
+<img id="canvasimg5" style="position:absolute;top:8%;left:60%; height: 30%;display: none;">
+<img id="canvasimg6" style="position:absolute;top:8%;left:70%; height: 30%;display: none;">
+
+<img style="margin-top: 20%; margin-left: 19%; width: 10%;" src="images/stage1.png">
+<img style="margin-top: 20%; margin-left: 0%; width: 10%;" src="images/stage2.png">
+<img style="margin-top: 20%; margin-left: 0%; width: 10%" src="images/stage3.png">
+<img style="margin-top: 20%; margin-left: 0;width: 10%" src="images/stage4.png">
+<img style="margin-top: 20%; margin-left: 0;width: 10%" src="images/stage5.png">
+<img style="margin-top: 20%; margin-left: 0;width: 13%" src="images/stage6.png">
+<br>
+<button onclick="window.location.href = 'index.html';" style="width: 100px; height:40px; margin-left:49%;">Tilbage til forsiden</button>
+</div>
+ 
+    </body>
+  </html>
+
