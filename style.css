@@ -125,6 +125,59 @@ td, th {
     transition: 1s;  
 }
 
+.indexbutton:hover p{
+    transition: 1s;
+    margin-top: 69.5%;
+}
+
+.indexbutton{
+    display: block;
+    margin: auto;
+    width: 350px;
+    background-size:cover;
+    border-radius: 10%;
+    border-color:rgb(176, 163, 163);
+    border-width: 0;
+ 
+}
+
+.indexbutton:hover{
+    border-width: 10px;
+    width: 350px;
+    height: 265px;
+    transition: 1s;  
+}
+
+.indexbutton:hover p{
+    transition: 1s;
+    margin-top: 69.5%;
+}
+
+.indexbutton{
+    display: block;
+    margin: auto;
+    width: 350px;
+    background-size:cover;
+    border-radius: 10%;
+    border-color:rgb(176, 163, 163);
+    border-width: 0;
+ 
+}
+
+.indexbutton:hover{
+    border-width: 10px;
+    width: 350px;
+    height: 265px;
+    transition: 1s;  
+}
+
+.indexbutton:hover p{
+    transition: 1s;
+    margin-top: 69.5%;
+}
+
+
+
 /* text for buttons */
 .buttontext{
     font-family:"Source Sans Pro", helvetica, sans-serif;
@@ -135,10 +188,7 @@ td, th {
     margin:auto;
     margin-top: 70%;
 }
-.indexbutton:hover p{
-    transition: 1s;
-    margin-top: 69.5%;
-}
+
 
 
 /* images for buttons */
@@ -151,27 +201,28 @@ td, th {
 }
 
 #refleksionbutton{
-    background-image: url('images/f.png');
+    background-image: url('images/metarefleksion.png');
     margin-right: 0%;
 }
 #refleksionbutton:hover{
-    background-image: url('images/fe.gif');
+    background-image: url('images/metarefleksion.gif');
 }
 
 #logbogbutton{
-    background-image: url('images/f.png');
+    background-image: url('images/logbogimage.png');
     margin-left: 0%;
 }
 #logbogbutton:hover{
-    background-image: url('images/fe.gif');
+    background-image: url('images/logboggif.gif');
 }
 
 #monkeygamebutton{
-    background-image: url('images/f.png');
+    background-image: url('images/drawmonkey.png');
     margin-right: 0%;
 }
 #monkeygamebutton:hover{
-    background-image: url('images/fe.gif');
+    background-image: url('images/drawmonkey.gif');
+
 }
 
 /* bodytext */
@@ -203,7 +254,8 @@ td, th {
 
 .bodytext{
     margin:auto;
-    margin-left: 3%;
+    font-family: arial;
+    margin-left: 5%;
     margin-right: 3%;
 }
 
