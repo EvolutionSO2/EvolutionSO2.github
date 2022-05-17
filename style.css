@@ -130,53 +130,6 @@ td, th {
     margin-top: 69.5%;
 }
 
-.indexbutton{
-    display: block;
-    margin: auto;
-    width: 350px;
-    background-size:cover;
-    border-radius: 10%;
-    border-color:rgb(176, 163, 163);
-    border-width: 0;
- 
-}
-
-.indexbutton:hover{
-    border-width: 10px;
-    width: 350px;
-    height: 265px;
-    transition: 1s;  
-}
-
-.indexbutton:hover p{
-    transition: 1s;
-    margin-top: 69.5%;
-}
-
-.indexbutton{
-    display: block;
-    margin: auto;
-    width: 350px;
-    background-size:cover;
-    border-radius: 10%;
-    border-color:rgb(176, 163, 163);
-    border-width: 0;
- 
-}
-
-.indexbutton:hover{
-    border-width: 10px;
-    width: 350px;
-    height: 265px;
-    transition: 1s;  
-}
-
-.indexbutton:hover p{
-    transition: 1s;
-    margin-top: 69.5%;
-}
-
-
 
 /* text for buttons */
 .buttontext{
